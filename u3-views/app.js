@@ -1,7 +1,10 @@
+
 const express = require('express')
 const expHbs = require('express-handlebars')
-const { index } = require('./features/indexController')
 const { courseDetails, courseUnits, courseStudents } = require('./features/courseController')
+const { index } = require('./features/indexController')
+const { videoPlayer, videoHome } = require('./features/videoController')
+
 const app = express()
 
 // Templates
@@ -21,7 +24,8 @@ app.get('/', index)
 app.get('/courses/:code', courseDetails)
 app.get('/courses/:code/units', courseUnits)
 app.get('/courses/:code/students', courseStudents)
-// TODO later
+app.get('/videos/:id', videoPlayer)
+app.get('/videos', videoHome)
 
 const PORT = 3000
 app.listen(PORT,
