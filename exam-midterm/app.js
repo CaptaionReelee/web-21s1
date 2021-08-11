@@ -3,7 +3,7 @@ const expHbs = require('express-handlebars')
 const { json, urlencoded } = require('body-parser')
 
 const { index } = require('./features/index-controller')
-const { athleteCreateForm } = require('./features/athletes-controller')
+const { athleteCreateForm, athleteList, athleteDetails, athleteSchedule, athleteCreateByFrom } = require('./features/athletes-controller')
 
 const app = express()
 
@@ -26,6 +26,10 @@ app.get('/', index)
 
 // TODO: เขียนเส้นทางของคุณที่นี่ // Write your routes here
 app.get('/athletes/new', athleteCreateForm)
+app.get('/athletes', athleteList)
+app.get('/athletes/:slug', athleteDetails)
+app.get('/athletes/:slug/schedule', athleteSchedule)
+app.post('/athletes', athleteCreateByFrom)
 
 // General
 app.get('/images/:catchall', (_req, res) => res.redirect('/images/404.jpg'))
