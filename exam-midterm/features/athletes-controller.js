@@ -32,16 +32,15 @@ const athleteSchedule = async (req, res) => {
   const athleteSchedule = (await query).docs.map(doc => doc.data())
   res.render('athletes-schdules', { athleteSchedule })
 }
-const athleteCreateByFrom = async (req, res) => {
-  const { slug, name, images, gender } = req.body
-  const data = { slug, name, images, gender }
+const athleteCreateByFrom = (req, res) => {
+  const name = req.body.name
+  const age = req.body.age
+  const gender = req.body.gender
 
-  const query = db.collection('athletes')
-    .doc(slug)
-    .set(data)
-
-  await query
-  res.redirect(`/athletes/${slug}`)
+  res.send(`<p1>${name}<p1><br>
+  Age:${age}
+  <img src="/images/athletes/{{ panipak-wongpattanakit.jpg }}.jpg" />
+  Gender: ${gender}`)
 }
 module.exports = {
   athleteCreateForm, athleteList, athleteDetails, athleteSchedule, athleteCreateByFrom
