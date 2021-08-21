@@ -1,17 +1,17 @@
 {
-    // Formatting & Linting
+    
     "editor.codeActionsOnSave": [
-      "source.addMissingImports", // VSCode
-      "source.formatDocument", // Extension: Format Code Action
-      "source.fixAll.eslint", // Extension: ESLint
-      "source.fixAll.stylelint" // Extension: StyleLint
+      "source.addMissingImports", 
+      "source.formatDocument", 
+      "source.fixAll.eslint", 
+      "source.fixAll.stylelint" 
     ],
-    "editor.formatOnSave": false, // Enabled via codeActionsOnSave  (known order)
+    "editor.formatOnSave": false, 
     "editor.formatOnPaste": true,
     "editor.quickSuggestions": { "strings": true },
-    "editor.rulers": [80], // Same as Prettier
+    "editor.rulers": [80], 
     "editor.tabSize": 2,
-    "eslint.format.enable": false, // Enabled via codeActionsOnSave (known order)
+    "eslint.format.enable": false,),
     "eslint.lintTask.enable": true,
     "eslint.workingDirectories": [{ "mode": "auto" }],
     "files.autoSave": "onFocusChange",
@@ -23,7 +23,7 @@
     "prettier.useTabs": false,
     "prettier.endOfLine": "auto",
    
-    // Language-specific
+    
     "[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
     "[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
     "[typescriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
@@ -33,9 +33,9 @@
     "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
     "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
     "[vue]": { "editor.defaultFormatter": "octref.vetur" },
-    "css.validate": false, // Prefer stylelint
-    "less.validate": false, // Prefer stylelint
-    "scss.validate": false, // Prefer stylelint
+    "css.validate": false, 
+    "less.validate": false, 
+    "scss.validate": false, 
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
