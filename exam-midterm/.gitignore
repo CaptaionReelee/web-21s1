@@ -1,2 +1,8 @@
+# Secrets
+service-account*.json
+
+# Deps
 node_modules
-service-account.json
+
+# OS
+.DS_Store
