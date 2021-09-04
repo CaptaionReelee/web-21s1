@@ -1,3 +1,4 @@
+  
 import { db } from '@/_services/firebase-initialized'
 import { keyBy, sumBy } from 'lodash'
 import Vue from 'vue'
