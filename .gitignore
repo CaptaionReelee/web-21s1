@@ -1,8 +1,14 @@
 # Secrets
 service-account*.json
-
+firebase-config.ts
 # Deps
 node_modules
 
+# Logs
+*.log
+
 # OS
 .DS_Store
+
+#vscode
+.vscode
