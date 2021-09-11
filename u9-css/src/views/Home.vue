@@ -5,7 +5,7 @@
         <div class="container">
           <div class="columns">
             <div class="column is-one-quarter is-full-mobile">
-              <img alt="Vue logo" src="../assets/logo.png" />
+               <img alt="Vue logo" src="../assets/logo.png" />
             </div>
             <div class="column">
               <p class="is-size-3 is-hidden-tablet">Vue.js</p>
