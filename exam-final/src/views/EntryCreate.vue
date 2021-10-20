@@ -1,42 +1,43 @@
+
 <template>
   <div class="page-entry-create">
     <div class="section">
       <p class="title is-2">Create Entry</p>
 
       <b-field label="Lane" label-position="on-border">
-        <b-input type="number" />
+        <b-input v-model="lane" />
       </b-field>
 
       <b-field label="Name" label-position="on-border">
-        <b-input />
+        <b-input v-model="name"/>
       </b-field>
 
       <b-field label="PB 100" label-position="on-border">
-        <b-input />
+        <b-input v-model="pb100" type="number" />
       </b-field>
 
       <b-field label="PB 200" label-position="on-border">
-        <b-input />
+        <b-input v-model="pb200" type="number" />
       </b-field>
 
       <b-field label="SB 100" label-position="on-border">
-        <b-input />
+        <b-input  v-model="sb100" type="number"/>
       </b-field>
 
       <b-field label="SB 200" label-position="on-border">
-        <b-input />
+        <b-input  v-model="sb200" type="number"/>
       </b-field>
 
       <b-field label="Slug" label-position="on-border">
-        <b-input />
+        <b-input v-model="slug"/>
       </b-field>
 
       <b-field label="Team" label-position="on-border">
-        <b-input />
+        <b-input v-model="team"/>
       </b-field>
 
       <b-field label="Team Slug" label-position="on-border">
-        <b-input />
+        <b-input v-model="teamSlug"/>
       </b-field>
 
       <b-button type="is-primary" size="is-large" expanded>Save Entry</b-button>
