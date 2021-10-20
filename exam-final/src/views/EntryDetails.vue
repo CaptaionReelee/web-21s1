@@ -7,7 +7,7 @@
         <p> Season Best {{ entryRecords.sb100 }}</p>
     </div>
     <div class="section" v-else>
-      <p class="title is-2">Result not found</p>
+      <p class="title is-2">Entry not found</p>
     </div>
   </div>
 </template>
