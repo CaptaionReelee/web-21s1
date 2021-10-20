@@ -1,11 +1,9 @@
 <template>
   <div class="entry-result-list">
-    <div class="section">
+    <div class="entry">
     <p class="title is-2">Enries</p>
-    <div v-for="entry in entrys" :key="entry.slug">
-      <p>[{{entrySlug.slug}}]
-        Personal Best(PB){{ entryRecords.pb100 }}
-        Season Best(SB){{ entryRecords.sb100 }}
+    <div v-for="entryRecords in entry" :key="entryRecords.slug">
+      <p>{{entrySlug.slug}}
         <router-link :to="{name: 'EntryDetails', params: { EntrySlug: entry.slug }}">{{entry.name}}
         </router-link>
         <img :src="`/images/teams/${entry.teamSlug}.png`" width="2%" :alt="result.name" />
@@ -21,7 +19,7 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class EntryList extends Vue {
-  get entrys () : Entry [] {
+  get entry () : Entry [] {
     return this.$store.state.entries.sort((a: Entry, b: Entry) => a.lane - b.lane)
   }
 }
