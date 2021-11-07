@@ -3,6 +3,7 @@
     "@mdi/font": "^6.2.95",
     "buefy": "^0.9.10",
     "firebase": "^8",
+    "init": "^0.1.2",
     "lodash": "^4.17.21",
     "vuefire": "^2.2.5",
     "vuexfire": "^3.2.5"

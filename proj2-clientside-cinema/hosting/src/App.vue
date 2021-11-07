@@ -1,49 +1,60 @@
-
 <template>
-  <div
-    id="app"
-    class="has-background-light"
-  >
-    <div id="app">
+  <div id="app" class="has-background-light">
 
-    <b-navbar class="is-primary">
+    <b-navbar class="is-dark" wrapper-class="container">
       <template #brand>
-        <b-navbar-item tag="router-link" :to="{ path: '/' }" class="is-size-5">
-          <p>BECinema</p>
+        <b-navbar-item
+          tag="router-link"
+          :to="{ name: 'Home' }"
+          class="is-size-5"
+        >
+          <p class="is-size-3 has-text-weight-bold">BECinema</p>
         </b-navbar-item>
-        <b-navbar-item>
-            <p>Cinema</p>
-          </b-navbar-item>
-          <b-navbar-item>
-            <p>Flim</p>
-          </b-navbar-item>
       </template>
 
-      <template #end>
-        <b-navbar-dropdown collapsible hoverable right>
-          <template #label>
-            <b-icon icon="map-marker-radius"></b-icon>
-            <p>Phisanulok</p>
-          </template>
-          <b-navbar-item>
-            <p>Bankok</p>
-          </b-navbar-item>
-          <b-navbar-item>
-            <p>Chiang Mai</p>
-          </b-navbar-item>
-        </b-navbar-dropdown>
+      <template #start>
+        <b-navbar-item tag="router-link" :to="{ name: 'CinemaList' }">
+          Cinemas
+        </b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{ name: 'FilmList' }">
+          Films
+        </b-navbar-item>
+      </template>
 
-        <b-navbar-dropdown Personal>
+   <template #end>
+     <b-navbar-dropdown right>
+       <template #label>
+       <div style="user-select none;">
+         <b-icon icon="map-marker-radius-outline" class="mr-2"></b-icon>
+         {{ $store.state.activeLocation}}
+       </div>
+       </template>
+    <b-navbar-item
+      v-for="location in $store.state.locations"
+      :key="location"
+      @click="$store.dispatch('changeLocation', location)">
+
+      {{ location }}
+       </b-navbar-item>
+        </b-navbar-dropdown>
+        <b-navbar-dropdown right>
           <template #label>
-            <b-icon icon="account-circle-outline"></b-icon>
-            <p>Foon</p>
+              <figure class="img mr-2">
+                <img  src="/images/accounts/chaz.jpg" alt="Chaz"
+                class = "is-rounded"/>
+              </figure>
+              Chaz
           </template>
-          <b-button class="is-primary" expanded>My Trickets</b-button>
+           <b-navbar-item tag="router-link" :to="{ name: 'Tickets' }">
+             My Tickets
+              </b-navbar-item>
         </b-navbar-dropdown>
       </template>
     </b-navbar>
-    <router-view />
-  </div>
+      <div class="container py-5">
+      <router-view />
+      <div class="m-6 p-6" />
+    </div>
 
     <div class="layout-footer has-text-light has-background-dark py-5">
       <div class="container">
@@ -118,6 +129,10 @@ body {
 .image {
   display: inline-block;
   vertical-align: bottom;
+}
+
+img {
+    border-radius: 50%;
 }
 
 .layout-footer {
